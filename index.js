@@ -5,7 +5,7 @@ document.getElementById('Terminator 2').addEventListener("click", updateTerminat
 
 //function that updates html ids when Titanic button is pressed
 function updateTitanic(){
-  
+  clearDetails();
   document.getElementById('title').innerHTML = movies["Titanic"]["title"];
   document.getElementById('director').innerHTML = movies["Titanic"]["director"];
   document.getElementById('genre').innerHTML = movies["Titanic"]["genre"];
@@ -23,13 +23,13 @@ function updateTitanic(){
     document.getElementById('reviews').innerHTML += '"' + movies["Titanic"]["reviews"][x]["content"] + '"' + "<br>" + 
       "-" + movies["Titanic"]["reviews"][x]["username"]  + "<br>";
   }
-  document.getElementById('Titanic').disabled = true;
+ 
   
 } 
 
 //function that updates html ids when terminator button is pressed
 function updateTerminator(){
-  
+  clearDetails();
   document.getElementById('title').innerHTML = movies["Terminator 2"]["title"];
   document.getElementById('director').innerHTML = movies["Terminator 2"]["director"];
   document.getElementById('genre').innerHTML = movies["Terminator 2"]["genre"];
@@ -49,7 +49,10 @@ function updateTerminator(){
   }
   
 } 
-
-
+//function to clear details of reviews & cast divs
+function clearDetails(){
+  document.getElementById('cast').innerHTML = "";
+  document.getElementById('reviews').innerHTML = "";
+}
 
  
